@@ -1,4 +1,5 @@
 <?php
+include "database-config.php";
 function InsertIntoDB(&$formvars)
 {
     $confirmcode = $this->MakeConfirmationMd5($formvars['email']);

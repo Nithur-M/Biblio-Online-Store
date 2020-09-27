@@ -1,12 +1,13 @@
 <?php
-$database = 'biblio';
-$host = 'localhost';
-$user = 'nithur';
-$pass = 'root';
+session_start();
+define('DBSERVER', 'localhost:3306');
+define('DBUSERNAME', 'nithur');
+define('DBPASSWORD', 'root');
+define('DBNAME', 'biblio');
 
-$dbh = new PDO("mysql:dbname={$database};host={$host};port={3306}", $user, $pass);
+$con = mysqli_connect(DBSERVER, DBUSERNAME, DBPASSWORD, DBNAME);
 
-if(!$dbh){
-    echo "Error connecting to database";
-}
+if($con === false){
+    die("Error: connection error.". mysqli_connect_error());
+}else
 ?>

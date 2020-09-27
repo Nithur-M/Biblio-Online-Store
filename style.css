@@ -1,3 +1,7 @@
+body{
+  margin:0px;
+  background-color: #f3f3f3;
+}
 h2{padding: 10px;}
 
 .homepage{margin-top: 50px; text-align: center;}
@@ -78,6 +82,7 @@ th,td{border: 1px solid gray; padding: 5px;}
   border: none;
   width: 80px;
   height: 30px;
+  cursor: pointer;
 }
 
 .buttons .login-btn{
@@ -87,6 +92,7 @@ th,td{border: 1px solid gray; padding: 5px;}
   border: none;
   width: 80px;
   height: 30px;
+  cursor: pointer;
 }
 
 .form-popup{
@@ -115,6 +121,10 @@ th,td{border: 1px solid gray; padding: 5px;}
   
 }
 
+.form-popup .title{
+  color: #335d2d;
+  text-align: center;
+}
 
 @-webkit-keyframes animatezoom {
   from {-webkit-transform: scale(0)} 
@@ -126,15 +136,15 @@ th,td{border: 1px solid gray; padding: 5px;}
   to {transform: scale(1)}
 }
 
-.form-container input[type=text],.form-container input[type=password]{
+.form-container input[type=email],.form-container input[type=password]{
   width: 100%;
-  padding: 15px;
+  padding: 15px 0;
   margin: 5px 0 22px 0;
   border: none;
   background: #f1f1f1;
 }
 
-.form-container input[type=text]:focus, .form-container input[type=password]:focus{
+.form-container input[type=email]:focus, .form-container input[type=password]:focus{
   background-color: #ddd;
   outline: none;
 }
@@ -156,4 +166,129 @@ th,td{border: 1px solid gray; padding: 5px;}
 
 .form-container .btn:hover, .open-button:hover{
   opacity: 1;
+}
+
+.tabs{
+  padding: 20px;
+  height: 40px;
+}
+
+.tabs button{
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.active{
+  color: #335d2d;
+  border-bottom: 3px solid #335d2d;
+}
+
+.header{
+  background-color: #fff;
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-top: 2px;
+  height: 70px;
+}
+
+.header input[type=text]{
+  width: 40%;
+  padding: 6px;
+  margin-top: 16px;
+  margin-left: 30%;
+  border: 2px solid #335d2d;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.cart{
+  display: inline-block;
+  margin-left: 88px;
+  margin-top: -2px;
+}
+
+.cart-logo{
+  width: 28px;
+  color: #335d2d;
+  cursor: pointer;
+  margin-bottom: -8px;
+}
+
+.slideshow-container{
+  background: #000;
+  height: 272px;
+  width: 680px;
+  margin: 40px auto 0;
+  border-radius: 10px;
+  overflow: visible;
+  position: relative;
+  float: right;
+  margin-right: 30%;
+}
+
+.slides{
+  display: none;
+}
+
+.slides img{
+  vertical-align: middle;
+  max-width: 100%;
+  transition: white 0.7s ease-in 0.3s;
+  border-radius: 10px;
+}
+
+.active{
+  background-color: #717171;
+}
+
+.fade{
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.sidebar{
+  background-color: white;
+  width: 180px;
+  float: left;
+  margin-left: 60px;
+}
+
+.sidebar b{
+  padding: 30px 0 0 20px;
+}
+
+.sidebar ul{
+  list-style-type: none;
+}
+
+.sidebar li{
+  margin: 20px 0;
+}
+
+.new-arrivals{
+  float: right;
+  margin-right: 20px;
+  width: 140px;
+  background-color: white;
+}
+
+.new-arrivals img{
+  width: 120px;
+  height: auto;
 }
