@@ -13,20 +13,20 @@
 <body onload="slideshow_js()">
 
 <div class="top-bar">
-<div class="dropdown">
-  <button class="dropbtn">Account</button>
-  <div class="dropdown-content">
-    <p>Welcome to Biblio!</p>
-    <div class="buttons">
-		<button name="submit" class="join-btn" type="submit" value="Save" onclick="joinFunction()">Join</button>
-		<button name="submit" class="login-btn" type="submit" value="Cancel" onclick="loginFunction()">Log in</button>
-		<p id="saved"></p>
+  <button name="submit" class="admin-btn" id="adminPanelBtn" type="submit">Admin Panel</button>
+  <div class="dropdown">
+    <button class="dropbtn">Account</button>
+    <div class="dropdown-content">
+      <p>Welcome to Biblio!</p>
+      <div class="buttons">
+		    <button name="submit" class="join-btn" type="submit" value="join" onclick="joinFunction()">Join</button>
+		    <button name="submit" class="login-btn" type="submit" value="signin" onclick="loginFunction()">Log in</button>
+      </div>
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
     </div>
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
   </div>
-</div>
 </div>
 
 <?php
@@ -44,7 +44,6 @@
         if($result->num_rows > 0){
           $isValid = false;
           $error_message = "This Email already exists";
-      
         }
         
       if($isValid){
@@ -58,32 +57,24 @@
         echo $success_message;
       }
     }else if(isset($_POST['btn-signin'])){
-      $email = trim($_POST['email']);
-      $password = trim($_POST['psw']);
-
-      $isValid = true;
-      $stm = $con->prepare("SELECT FROM users WHERE email = ?");
-      $stm->bind_param('s', $email);
-      
-      $stm->execute();
-      $row = $stm->fetch();
-      
-      
-      if($row){
-        
-        if(password_verify($password, $row['password'])){
-          $_SESSION["user"] = $row;
-          echo "Successfully signed in";
-          exit;
-        }else{
-          $error = "Password is not valid";
-          echo $error;
-        }
-      }else{
-        $error = "Invalid email";
-        echo $error;
+      $isValid = 'true';
+      $message="";
+      if(count($_POST)>0) {
+	      $result = mysqli_query($con,"SELECT * FROM users WHERE email='" . $_POST["email"] . "' and password = '". $_POST["psw"]."'");
+        $count  = mysqli_num_rows($result);
+	      if($count==0) {
+		      $message = "Invalid Username or Password!";
+	      } else {
+          $message = "You are successfully authenticated!";
+          while($row = mysqli_fetch_array($result)){
+            if($row["role"] == 'admin'){
+              echo '<script type="text/javascript">',
+              'adminButtonFunction();',
+              '</script>';
+            }
+          }
+	      }
       }
-      $stm->close();
     }
 ?>
 
@@ -147,7 +138,7 @@
 </div>
 
 <div class="sidebar">
-  <b>Categories</b>
+  <b>Genres</b>
   <div class="sidebar-contents">
     <ul>
       <li>Fiction</li>
@@ -156,6 +147,7 @@
       <li>Comedy</li>
       <li>Poetry</li>
       <li>Feminism</li>
+      <li>Kids</li>
       <li>Philosophy</li>
       <li>Travel</li>
       <li>Photography</li>
@@ -164,9 +156,104 @@
   </div>
 </div>
 
-<div class="new-arrivals">
-  <h6>NEW ARRIVALS</h6>
-  <img src="images/latest.jpg">
+<div class="book-of-the-month">
+  <h4>BOOK OF THE MONTH</h4>
+  <img src="images/books/9781501145254.jpg">
+  <div class="details">
+    <p>My Own Words<br>by<br>Ruth Bader Ginsburg</p>
+  </div>
+</div>
+
+<div class="offer-container">
+  <h2>Get your LKR Rs.2000 coupon here.</h2>
+  <div class="gift-logo"><img src="images/gift.png"></div>
+</div>
+
+<div class="book-display">
+  <h2>New arrivals at Biblio</h2>
+  <div class="book-grid">
+    <ul class="image-list-small">
+      <li>
+        <a href="#" style="background-image: url('images/books/8045417_360x.jpg');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/517BC0Vee-L._SY346_360x.jpg');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/17859876_360x.jpg');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/41_a4QkbtGL._SX329_BO1_204_203_200_360x.jpg');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/40740914._SY475_360x.jpg');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/51ulPHHJVSL._SY346_360x.jpg');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/811ml6rmcXL_360x.webp');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/51H9PwqKhWL._SX321_BO1_204_203_200_360x.webp');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/3090348_360x.webp');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="#" style="background-image: url('images/books/513wwIJOo8L._SX323_BO1_204_203_200_360x.webp');"></a>
+        <div class="details">
+          <h3>details</h3>
+          <p class="image-author">Matt Stone</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
 </body>

@@ -3,6 +3,12 @@ function joinFunction(){
     document.getElementById("signin").style.display = "none";
 }
 
+function loginFunction(){
+    document.getElementById("joinForm").style.display = "block";
+    document.getElementById("signin").style.display = "block";
+    document.getElementById("register").style.display = "none";
+}
+
 function closeForm(){
     document.getElementById("joinForm").style.display = "none";
 }
@@ -47,4 +53,8 @@ function slideshow_js(){
         dots[slideIndex-1].className += "active";
         setTimeout(showSlides, 2000);
 }
+}
+
+function adminButtonFunction(){
+    document.getElementById("adminPanelBtn").style.display = "initial";
 }
