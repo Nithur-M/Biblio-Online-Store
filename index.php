@@ -176,7 +176,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/8045417_360x.jpg');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -184,7 +183,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/517BC0Vee-L._SY346_360x.jpg');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -192,7 +190,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/17859876_360x.jpg');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -200,7 +197,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/41_a4QkbtGL._SX329_BO1_204_203_200_360x.jpg');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -208,7 +204,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/40740914._SY475_360x.jpg');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -216,7 +211,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/51ulPHHJVSL._SY346_360x.jpg');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -224,7 +218,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/811ml6rmcXL_360x.webp');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -232,7 +225,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/51H9PwqKhWL._SX321_BO1_204_203_200_360x.webp');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -240,7 +232,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/3090348_360x.webp');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
@@ -248,7 +239,6 @@
       <li>
         <a href="#" style="background-image: url('images/books/513wwIJOo8L._SX323_BO1_204_203_200_360x.webp');"></a>
         <div class="details">
-          <h3>details</h3>
           <p class="image-author">Matt Stone</p>
         </div>
       </li>
